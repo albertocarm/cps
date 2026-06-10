@@ -1,0 +1,31 @@
+Package: cps
+Title: Reproducible Continuous PD-L1 CPS Modeling in Advanced Gastric/GEJ Cancer (AGAMENON)
+Version: 0.1.0
+Authors@R: c(
+    person("Alberto", "Carmona-Bayonas",
+           email = "alberto.carmonabayonas@gmail.com",
+           role = c("aut", "cre"),
+           comment = "Medical Oncology Department, Hospital Universitario Morales Meseguer, Murcia, Spain"),
+    person("AGAMENON-SEOM Investigators", role = "aut"))
+Description: De-identified patient-level data and functions to reproduce the
+    tables and figures of the AGAMENON analysis comparing dichotomized,
+    non-overlapping interval and continuous (restricted cubic spline) modeling
+    of the PD-L1 Combined Positive Score (CPS) for first-line immunotherapy in
+    advanced gastric and gastroesophageal junction adenocarcinoma. The bundled
+    dataset has the patient identifier removed so individuals are not traceable.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Depends:
+    R (>= 4.1),
+    rms
+Imports:
+    stats,
+    survival,
+    Hmisc,
+    gtsummary,
+    ggplot2
+Suggests:
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+RoxygenNote: 7.3.3
