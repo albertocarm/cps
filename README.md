@@ -85,6 +85,29 @@ patient identifier and other fields have been removed so individuals are not
 traceable. Derived columns (`log_cps`, CPS categories, treatment arm) are
 rebuilt by `cps_prepare()`.
 
+**Variable coding** (see also `?agamenon_cps`):
+
+| Variable | Coding |
+|---|---|
+| `SGm` | Overall survival, months |
+| `Die` | 1 = death, 0 = censored |
+| `Immunotherapy` | 0 = chemotherapy alone, 1 = chemotherapy + anti-PD-1 (CT+ICI) |
+| `cps` | PD-L1 Combined Positive Score, continuous (`NA` = not tested) |
+| `ECOG` | 0 = fully active, 1 = restricted in strenuous activity, 2 = ambulatory, self-caring, unable to work |
+| `Grade` | 1 = well, 2 = moderately, 3 = poorly differentiated |
+| `Gender` | 0 = male, 1 = female |
+| `age` | Age, years |
+| `Histology_Lauren_Combined` | Diffuse or Intestinal (Mixed cases combined) |
+| `signet_ring` | yes = present (any percentage), no = absent |
+| `burden` | Hepatic tumour burden (% liver parenchyma involved): 0 = none, 1 = <25%, 2 = 25-50%, 3 = 51-75%, 4 = >75% |
+| `ascites` | 0 = none, 1 = mild, 2 = moderate, 3 = severe |
+| `bone` | Bone metastases: No / Yes |
+| `num_met` | Metastatic sites: `1-2` (one or two) / `>=3` (three or more) |
+| `ratio` | Neutrophil-to-lymphocyte ratio (NLR), continuous |
+| `oxali` | Oxaliplatin-based chemotherapy backbone: `TRUE` / `FALSE` |
+| `ALB` | Basal serum albumin: 0 = normal (>3.5 g/dL), 1 = 3.0-3.5 g/dL, 2 = <3.0 g/dL |
+| `year` | Calendar year of first-line treatment initiation |
+
 ## Key result (reproducible)
 
 <p align="center">
