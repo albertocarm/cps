@@ -46,10 +46,10 @@ cps_fit <- function(data = cps::agamenon_cps, m = 10, seed = 123) {
   imp <- Hmisc::aregImpute(stats::reformulate(vimp), data = sub, n.impute = m,
                            nk = 0, pr = FALSE)
 
-  fitm <- function(rhs) Hmisc::fit.mult.impute(
+  fitm <- function(rhs) suppressWarnings(Hmisc::fit.mult.impute(
     stats::as.formula(paste("survival::Surv(SGm, Die) ~", rhs)),
     fitter = rms::cph, xtrans = imp, data = sub,
-    fitargs = list(x = TRUE, y = TRUE), pr = FALSE)
+    fitargs = list(x = TRUE, y = TRUE), pr = FALSE))
 
   interval <- fitm(paste("Immunotherapy * cps_cat +", covs))
   bin1     <- fitm(paste("Immunotherapy * cps1 +", covs))
