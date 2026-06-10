@@ -32,22 +32,22 @@ if (getRversion() >= "2.15.1") utils::globalVariables(c("cps", "HR", "lo", "hi")
 #' @format A data frame with 1040 rows and 18 variables:
 #' \describe{
 #'   \item{SGm}{Overall survival, months.}
-#'   \item{Die}{Death indicator (1 = death, 0 = censored).}
-#'   \item{Immunotherapy}{Treatment: 1 = chemo + anti-PD-1 (CT+ICI), 0 = chemo alone.}
+#'   \item{Die}{Vital status: 1 = death, 0 = censored (alive at last follow-up).}
+#'   \item{Immunotherapy}{First-line treatment arm: 0 = chemotherapy alone, 1 = chemotherapy plus anti-PD-1 (CT+ICI).}
 #'   \item{cps}{PD-L1 Combined Positive Score (continuous; NA = not tested).}
-#'   \item{ECOG}{ECOG performance status.}
-#'   \item{Grade}{Histological grade.}
-#'   \item{Gender}{Sex.}
+#'   \item{ECOG}{ECOG performance status: 0 = fully active, 1 = restricted in strenuous activity, 2 = ambulatory and self-caring but unable to work.}
+#'   \item{Grade}{Histological grade: 1 = well, 2 = moderately, 3 = poorly differentiated.}
+#'   \item{Gender}{Sex: 0 = male, 1 = female.}
 #'   \item{age}{Age, years.}
-#'   \item{Histology_Lauren_Combined}{Lauren histology (Diffuse / Intestinal).}
-#'   \item{signet_ring}{Signet-ring-cell histology (yes / no).}
-#'   \item{burden}{Hepatic tumour burden category (0 = no liver involvement ... 4).}
-#'   \item{ascites}{Ascites grade (0-3).}
-#'   \item{bone}{Bone metastases indicator.}
-#'   \item{num_met}{Number of metastatic sites (1-2 / >=3).}
-#'   \item{ratio}{Neutrophil-to-lymphocyte ratio (NLR).}
+#'   \item{Histology_Lauren_Combined}{Lauren classification: Diffuse or Intestinal (Mixed cases combined).}
+#'   \item{signet_ring}{Signet-ring-cell histology: yes = present (any percentage), no = absent.}
+#'   \item{burden}{Hepatic tumour burden, estimated percentage of liver parenchyma involved: 0 = no liver involvement, 1 = <25\%, 2 = 25-50\%, 3 = 51-75\%, 4 = >75\%.}
+#'   \item{ascites}{Ascites: 0 = none, 1 = mild, 2 = moderate, 3 = severe.}
+#'   \item{bone}{Bone metastases: No / Yes.}
+#'   \item{num_met}{Number of metastatic sites (organs involved): 1-2 = one or two, >=3 = three or more.}
+#'   \item{ratio}{Neutrophil-to-lymphocyte ratio (NLR), continuous.}
 #'   \item{oxali}{Oxaliplatin-based backbone (logical).}
-#'   \item{ALB}{Serum albumin (auxiliary variable for multiple imputation).}
+#'   \item{ALB}{Basal serum albumin category: 0 = normal (>3.5 g/dL), 1 = 3.0-3.5 g/dL, 2 = <3.0 g/dL.}
 #'   \item{year}{Year of treatment initiation.}
 #' }
 #' @source AGAMENON-SEOM registry (NCT04958720).
