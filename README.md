@@ -30,11 +30,11 @@ cubic spline**.
 ## Installation
 
 ```r
-# local (current)
-install.packages("path/to/cps", repos = NULL, type = "source")
-
 # from GitHub
-# remotes::install_github("albertocarm/cps")
+remotes::install_github("albertocarm/cps")
+
+# or from a local copy of the repository (a folder or a built tarball)
+remotes::install_local("cps")        # or: devtools::install("cps")
 ```
 
 Depends on `rms`; imports `survival`, `Hmisc`, `gtsummary`, `ggplot2`.
