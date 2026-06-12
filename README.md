@@ -117,23 +117,23 @@ rebuilt by `cps_prepare()`.
 **This figure is the heart of the paper.** It shows the hazard ratio for
 immunotherapy versus chemotherapy across the entire PD-L1 CPS range: the benefit
 is uncertain at low CPS (the 95% CI crosses 1), becomes clearly favourable around
-CPS ≈ 10, and deepens to roughly HR 0.4 at the highest scores. A single fixed
+CPS ≈ 10, and deepens to roughly HR 0.35 at the highest scores. A single fixed
 cutpoint cannot capture this smooth gradient — modelling CPS as a continuous
 score can. It is reproduced exactly by `cps_figure_hr()`.
 
 The immunotherapy hazard ratio decreases across CPS subgroups, reaching its
 lowest value in the CPS ≥ 10 stratum. When CPS is modelled as non-overlapping
-intervals the CPS-by-treatment interaction is significant (p ≈ 0.02), and the
-continuous spline gives the lowest AIC of the specifications compared (ΔAIC ≈ 3
-versus the interval model) with a significant non-linear component (p ≈ 0.04).
+intervals the CPS-by-treatment interaction is significant (p ≈ 0.03), and the
+continuous spline gives the lowest AIC of the specifications compared, with a
+significant interaction (overall p ≈ 0.04, non-linear component p ≈ 0.02).
 
 | CPS subgroup | HR for OS (CT+ICI vs CT alone) |
 |---|---|
 | ≥1 | 0.74 (0.59–0.93) |
-| 1–4 | 1.24 (0.61–2.51) |
+| 1–4 | 1.23 (0.60–2.53) |
 | **≥5** | **0.70 (0.51–0.96)** |
-| 5–9 | 1.07 (0.68–1.69) |
-| **≥10** | **0.45 (0.30–0.68)** |
+| 5–9 | 1.05 (0.66–1.66) |
+| **≥10** | **0.46 (0.31–0.69)** |
 
 Numbers are reproduced by `cps_table2()` / `cps_model_comparison()` (seed 123).
 

@@ -40,7 +40,7 @@ cps_fit <- function(data = cps::agamenon_cps, m = 10, seed = 123) {
   covs <- .cps_covs()
   vimp <- c("SGm","Die","Immunotherapy","log_cps","oxali","Gender","age","ECOG",
             "ratio","Grade","num_met","Histology_Lauren_Combined","burden",
-            "ascites","bone","ALB","year")
+            "ascites","bone","ALB")
   vimp <- intersect(vimp, names(sub))
   set.seed(seed)
   imp <- Hmisc::aregImpute(stats::reformulate(vimp), data = sub, n.impute = m,

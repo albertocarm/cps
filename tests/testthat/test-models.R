@@ -24,6 +24,6 @@ test_that("cps_fit / cps_table2 / cps_model_comparison reproduce Table 2 (seed 1
   mc <- cps_model_comparison(fit)
   expect_equal(nrow(mc), 4)
   expect_equal(mc$Model[which.min(mc$AIC)], "Spline")
-  expect_true(all(mc$AIC > 7815 & mc$AIC < 7840))
+  expect_true(all(mc$AIC > 7830 & mc$AIC < 7845))
   expect_true(all(mc$C_index > 0.66 & mc$C_index < 0.70))
 })
