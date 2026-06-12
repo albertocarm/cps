@@ -124,8 +124,9 @@ score can. It is reproduced exactly by `cps_figure_hr()`.
 The immunotherapy hazard ratio decreases across CPS subgroups, reaching its
 lowest value in the CPS ≥ 10 stratum. When CPS is modelled as non-overlapping
 intervals the CPS-by-treatment interaction is significant (p ≈ 0.03), and the
-continuous spline gives the lowest AIC of the specifications compared, with a
-significant interaction (overall p ≈ 0.04, non-linear component p ≈ 0.02).
+continuous spline has the lowest AIC and the lowest BIC of the specifications
+compared (clearly best by BIC), with a significant interaction (overall
+p ≈ 0.04, non-linear component p ≈ 0.02).
 
 | CPS subgroup | HR for OS (CT+ICI vs CT alone) |
 |---|---|
