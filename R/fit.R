@@ -77,4 +77,6 @@ cps_fit <- function(data = cps::agamenon_cps, m = 10, seed = 123) {
 }
 
 .cps_stats <- function(fit) { s <- fit$stats
-  c(AIC = stats::AIC(fit), C = unname(s["Dxy"]/2 + 0.5), R2 = unname(s["R2"])) }
+  k <- length(stats::coef(fit)); n <- unname(s["Events"]); aic <- stats::AIC(fit)
+  c(AIC = aic, BIC = aic - 2 * k + log(n) * k,
+    C = unname(s["Dxy"]/2 + 0.5), R2 = unname(s["R2"])) }

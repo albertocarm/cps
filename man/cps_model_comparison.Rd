@@ -2,7 +2,7 @@
 % Please edit documentation in R/model_comparison.R
 \name{cps_model_comparison}
 \alias{cps_model_comparison}
-\title{Supplementary Table S4 - model comparison (AIC, C-index, R2)}
+\title{Supplementary Table S4 - model comparison (AIC, BIC, C-index, R2)}
 \usage{
 cps_model_comparison(object = cps_fit())
 }
@@ -13,5 +13,6 @@ cps_model_comparison(object = cps_fit())
 A data frame comparing the spline, interval and binary models.
 }
 \description{
-Supplementary Table S4 - model comparison (AIC, C-index, R2)
+BIC uses the number of events as the sample size, the usual convention for
+Cox models.
 }
