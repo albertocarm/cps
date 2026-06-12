@@ -34,9 +34,8 @@ cps_figure_hr <- function(object = cps_fit(), cps_grid = seq(2, 100, by = 2)) {
     ggplot2::geom_errorbar(ggplot2::aes(ymin = lo, ymax = hi), width = 0,
                            color = "#6BAED6", linewidth = 0.6) +
     ggplot2::geom_point(color = "#2171B5", size = 2.2) +
-    ggplot2::scale_y_continuous(trans = "log10",
-                                breaks = c(0.3, 0.4, 0.5, 0.7, 1.0),
-                                minor_breaks = c(0.35, 0.45, 0.6, 0.8, 0.9, 1.1)) +
+    ggplot2::scale_y_continuous(breaks = seq(0.2, 1.0, by = 0.1),
+                                minor_breaks = seq(0.15, 1.15, by = 0.1)) +
     ggplot2::scale_x_continuous(breaks = seq(0, 100, 5)) +
     ggplot2::labs(
       title = "Treatment Effect of Immunotherapy Across CPS Values",
